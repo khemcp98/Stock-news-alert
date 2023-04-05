@@ -2,10 +2,10 @@ import requests
 import datetime as dt
 from twilio.rest import Client
 
-account_sid = "AC3a42f84005a94f1eadfd79b8b94be92e"
-auth_token = "66cc32bcb612798a8f854a67121996ac"
+account_sid = "twilio_acc_id"
+auth_token = "twilio_api_key"
 
-NEWS_API_KEY = "6e96514db24b4bf99c7e07de2ef7a21b"
+NEWS_API_KEY = "newsapi_key"
 NEWS_API = "https://newsapi.org/v2/everything"
 NEWS_PARAMS = {
     'q': 'tesla',
@@ -14,7 +14,7 @@ NEWS_PARAMS = {
 }
 
 STOCK = "TSLA"
-ALPHA_ADVANTAGE_API_KEY = "54GD66CWFWW8OWK2"
+ALPHA_ADVANTAGE_API_KEY = "get_your_own_key"
 ALPHA_ADVANTAGE_API = "https://www.alphavantage.co/query"
 ALPHA_ADVANTAGE_PARAMS = {
     'function': 'TIME_SERIES_DAILY_ADJUSTED',
@@ -51,7 +51,7 @@ if difference >= 5 or difference <= -5:
 
     client = Client(account_sid, auth_token)
     message = client.messages.create(
-        from_='whatsapp:+14155238886',
+        from_='whatsapp:+get number from twilio',
         body=f'TSLA: {symbol}{abs(difference)}%\nHeadline: {news_title}\n\nBrief: {news_brief}',
-        to='whatsapp:+918279576916'
+        to='whatsapp:your mobile no'
     )
